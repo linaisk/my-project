@@ -38,8 +38,8 @@ jobs:
         run: docker build -t my-image:latest .
 
       - name: Tag Docker image
-        run: docker tag my-image:latest 592524167743.dkr.ecr.us-west-2.amazonaws.com/bar:latest
+        run: docker tag my-image:latest 483900288775.dkr.ecr.us-west-2.amazonaws.com/bar:latest
 
       - name: Push Docker image to Amazon ECR
         run: |
-          docker push 592524167743.dkr.ecr.us-west-2.amazonaws.com/bar:latest
+          docker push 483900288775.dkr.ecr.us-west-2.amazonaws.com/bar:latest
