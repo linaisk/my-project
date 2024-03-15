@@ -29,17 +29,12 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Print ECR login output
-        run: |
-          echo "${{ steps.login-ecr.outputs.registry }}"
-          echo "${{ steps.login-ecr.outputs.region }}"
-
       - name: Build Docker image
         run: docker build -t my-image:latest .
 
       - name: Tag Docker image
-        run: docker tag my-image:latest 483900288775.dkr.ecr.us-west-2.amazonaws.com/bar:latest
+        run: docker tag my-image:latest public.ecr.aws/n7p4j8v7/linaecr:latest
 
       - name: Push Docker image to Amazon ECR
         run: |
-          docker push 483900288775.dkr.ecr.us-west-2.amazonaws.com/bar:latest
+          docker push public.ecr.aws/n7p4j8v7/linaecr:latest
